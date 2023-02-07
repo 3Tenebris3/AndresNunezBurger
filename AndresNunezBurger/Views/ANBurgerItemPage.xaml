@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AndresNunezBurger.Views.ANBurgerItemPage"
+             Title="ANBurgerItemPage"
+             xmlns:models="clr-namespace:AndresNunezBurger.Models">
+    <ContentPage.BindingContext>
+        <models:ANBurger/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" 
+                             Spacing="10" 
+                             VerticalOptions="StartAndExpand">
+            <Label Text="Nombre" />
+            <Entry x:Name="nameAN" Text="{Binding Name}"/>
+            <Label Text="Description" />
+            <Entry x:Name="descAN" Text="{Binding Description}"/>
+            <Label Text="¿Con queso extra?" />
+            <CheckBox x:Name="check" 
+                      CheckedChanged="CheckedChangedAN" 
+                      IsChecked="{Binding WithExtraCheese}"/>
+            <Button BackgroundColor="YellowGreen"
+                    Text="Guardar" 
+                    Clicked="OnSaveClickedAN" />
+            <Button BackgroundColor="YellowGreen"
+                    Text="Cancelar" 
+                    Clicked="CancelClickedAN" />
+            <Button BackgroundColor="YellowGreen"
+                    Text="Eliminar" 
+                    Clicked="OnDeleteClickedAN" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
